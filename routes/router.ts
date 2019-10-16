@@ -5,7 +5,7 @@ export const router = Router();
 router.get('/mensajes', (req: Request, res: Response)=>{
     res.json({
         ok : true,
-        message: 'Todo esta bien';
+        message: 'Todo esta bien'
     });
 });
 
