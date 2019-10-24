@@ -32,16 +32,19 @@ export default class Server {
             console.log(cliente.id);
 
             // conectar cliente
-            socketController.connectUser(cliente);
+            socketController.connectUser(cliente, this.io);
 
             // configurar usuario
-            socketController.configurar(cliente,this.io, ()=>{});
+            socketController.configurar(cliente,this.io);
 
             // Desconectar
-            socketController.desconectar(cliente);
+            socketController.desconectar(cliente, this.io);
 
             //subscripcion a mensajes
             socketController.mensaje(cliente, this.io);
+
+            //subscripcion a usersconnected
+            socketController.getusers(cliente, this.io);
 
         });
     }
